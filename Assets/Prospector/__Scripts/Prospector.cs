@@ -272,7 +272,7 @@ void SetUpUITexts() {
         }
         SceneManager.LoadScene("_Prospector_Scene_0");
     }
-    public bool AdjacentRank(CardProspector c0, cardProspector c1)
+    public bool AdjacentRank(CardProspector c0, CardProspector c1)
     {
         if (!c0.faceUp || !c1.faceUp) return (false);
         if (Mathf.Abs(c0.rank - c1.rank) == 1)
