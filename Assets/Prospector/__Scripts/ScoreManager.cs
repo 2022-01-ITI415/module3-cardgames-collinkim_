@@ -1,35 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public enum eScoreEvent
 {
     draw,
     mine,
     mineGold,
     gameWin,
-    gameLoss,
+    gameLoss
 }
 public class ScoreManager : MonoBehaviour
 {
     static private ScoreManager S;
+
     static public int SCORE_FROM_PREV_ROUND = 0;
     static public int HIGH_SCORE = 0;
-    [Header("SetDynamically")]
+
+    [Header("Set Dynamically")]
     public int chain = 0;
     public int scoreRun = 0;
     public int score = 0;
 
-    void Awake()
+    private void Awake()
     {
         if (S == null)
         {
             S = this;
-        }
-        else
+        } else
         {
-            Debug.LogError("ERROR:ScoreManager.Awake():S is already set!");
+            Debug.LogError("Error: ScoreManager.Awake(): S is already set!");
         }
-        if (PlayerPrefs.HasKey("ProspectorHighScore"))
+        if (PlayerPrefs.HasKey ("ProspectorHighScore"))
         {
             HIGH_SCORE = PlayerPrefs.GetInt("ProspectorHighScore");
         }
@@ -42,15 +44,15 @@ public class ScoreManager : MonoBehaviour
         try
         {
             S.Event(evt);
-        }
-        catch (System.NullReferenceException nre)
+        } catch (System.NullReferenceException nre)
         {
-            Debug.LogError ("ScoreManager:EVENT() called while S = null. \n" +nre);
+            Debug.LogError("ScoreManager:EVENT() called while S=null.\n" + nre);
         }
     }
+
     void Event(eScoreEvent evt)
     {
-        switch (evt)
+        switch(evt)
         {
             case eScoreEvent.draw:
             case eScoreEvent.gameWin:
@@ -59,36 +61,30 @@ public class ScoreManager : MonoBehaviour
                 score += scoreRun;
                 scoreRun = 0;
                 break;
-
+        }
+        switch(evt)
+        {
             case eScoreEvent.mine:
                 chain++;
                 scoreRun += chain;
                 break;
-        }
-
-
-        switch (evt)
-        {
             case eScoreEvent.gameWin:
                 SCORE_FROM_PREV_ROUND = score;
-                print("You won this round! Roundscore:" + score);
+                print("You won this round! Round Score: " + score);
                 break;
-
             case eScoreEvent.gameLoss:
-                if (HIGH_SCORE <= score)
+                if(HIGH_SCORE <= score)
                 {
-                    print("You got the highscore! Highscore:" + score);
+                    print("You got the high score! High Score: " + score);
                     HIGH_SCORE = score;
                     PlayerPrefs.SetInt("ProspectorHighScore", score);
-                }
-                else
+                } else
                 {
-                    print("Your final score for the game was:" + score);
+                    print("Your final score for the game was: " + score);
                 }
                 break;
-
             default:
-                print("score:" + score + "scoreRun:" + scoreRun + "chain:" + chain);
+                print("score: " + score + " scoreRun:" + scoreRun + " chain:" + chain);
                 break;
         }
     }
@@ -96,4 +92,16 @@ public class ScoreManager : MonoBehaviour
     static public int CHAIN { get { return S.chain; } }
     static public int SCORE { get { return S.score; } }
     static public int SCORE_RUN { get { return S.scoreRun; } }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
