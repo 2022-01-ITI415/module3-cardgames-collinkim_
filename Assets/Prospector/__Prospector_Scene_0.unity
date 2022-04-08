@@ -214,7 +214,7 @@ Transform:
   m_GameObject: {fileID: 3054798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 45.9, y: 22, z: 1}
+  m_LocalScale: {x: 29, y: 18, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.95}
   m_AnchorMax: {x: 0.5, y: 0.95}
-  m_AnchoredPosition: {x: 0, y: -24}
+  m_AnchoredPosition: {x: 0, y: -48}
   m_SizeDelta: {x: 200, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528922471
@@ -415,7 +415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 47}
+  m_AnchoredPosition: {x: -88, y: 47}
   m_SizeDelta: {x: 320, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &620341725
@@ -515,7 +515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.825}
   m_AnchorMax: {x: 0.5, y: 0.825}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: -57}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &701087009
@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 827460515}
   - component: {fileID: 827460514}
   - component: {fileID: 827460511}
+  - component: {fileID: 827460516}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -763,6 +764,49 @@ MonoBehaviour:
   tableau: []
   discardPile: []
   fsRun: {fileID: 0}
+--- !u!114 &827460516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827460508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54759401a8d7a5d4c8f0d7f8fba58a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmlr:
+    xmlText: 
+  multiplier: {x: 0, y: 0}
+  slotDefs: []
+  drawPile:
+    x: 0
+    y: 0
+    faceUp: 0
+    layerName: Default
+    layerID: 0
+    id: 0
+    hiddenBy: 
+    type: slot
+    stagger: {x: 0, y: 0}
+  discardPile:
+    x: 0
+    y: 0
+    faceUp: 0
+    layerName: Default
+    layerID: 0
+    id: 0
+    hiddenBy: 
+    type: slot
+    stagger: {x: 0, y: 0}
+  sortingLayerNames:
+  - Row 0
+  - Row1
+  - Row2
+  - Row3
+  - Discard
+  - Draw
 --- !u!850595691 &1292306373
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -858,7 +902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.825}
   m_AnchorMax: {x: 0.5, y: 0.825}
-  m_AnchoredPosition: {x: 0, y: -21}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1749607671
@@ -939,7 +983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.85, y: 1}
   m_AnchorMax: {x: 0.85, y: 1}
-  m_AnchoredPosition: {x: 29, y: -211}
+  m_AnchoredPosition: {x: -83, y: -211}
   m_SizeDelta: {x: 200, y: 32}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1997485982
